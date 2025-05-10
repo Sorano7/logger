@@ -20,7 +20,7 @@ class LogRunner:
   
   def __init__(self, level):
     self.set_level(level)
-    self.format = "[time(%H:%M)] [level] [file] [name] msg"
+    self.format = "time(%H:%M) | level | file:line | msg"
   
   def should_print(self, level):
     return _get_level(level) >= self.level
