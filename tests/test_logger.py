@@ -41,7 +41,7 @@ def test_runner_format_log(runner, log_data):
   assert runner.format_log(level, msg, time, name, file, line) == "<DEBUG> ++Test++ 'This is a test.'"
   
 def test_logger_log(runner, capsys):
-  runner.set_format("[time(%H:%M)] [level] [file] [name] msg")
+  runner.set_format("[time(%H:%M)] [level] [file:line] [name] msg")
   logger_debug = lg.get_logger("Debug", "DEBUG")
   with patch('logger.logger.datetime') as mock_datetime:
     mock_datetime.now.return_value = datetime(2025, 5, 9, 21, 4, 54)
